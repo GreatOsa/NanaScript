@@ -1,3 +1,5 @@
+
+
 let tablinks = document.getElementsByClassName("tab-links");
 let tabcontents = document.getElementsByClassName("tab-contents");
 
@@ -16,8 +18,8 @@ function opentab(tabname) {
 
 const faders = document.querySelectorAll(".fade-in");
 const appearOptions = {
-    threshold:1,
-    rootMargin: "0px 0px -100px 0px"
+  threshold: 1,
+  rootMargin: "0px 0px -100px 0px",
 };
 
 const appearOnScroll = new IntersectionObserver(function (
@@ -35,17 +37,28 @@ const appearOnScroll = new IntersectionObserver(function (
 },
 appearOptions);
 
-faders.forEach(fader =>{
-    appearOnScroll.observe(fader)
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
 });
 
 // ---------------------------------------------------------------------sidebar------------------------------------------------------
+var sidemenu = document.getElementById("sidemenu");
 
-var sidemenu = document.getElementById('sidemenu');
+function openmenu() {
+  sidemenu.style.right = "0";
+}
+function closemenu() {
+  sidemenu.style.right = "-200px";
+}
 
-function openmenu(){
-    sidemenu.style.right = '0';
-}
-function closemenu(){
-    sidemenu.style.right = '-200px';
-}
+// ----------------------------------------------------------------
+
+// function onClickMenu(){
+//   document.getElementById("menu").classList.toggle("change");
+//   sidemenu.style.right = '0';
+
+//   document.getElementById("nav").classList.toggle("change");
+
+//   // document.getElementById("menu-").classList.toggle("change");
+
+// }
